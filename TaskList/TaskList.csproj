@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\Dashboard.cs" />
     <Compile Include="src\DashboardAdd.xaml.cs">
       <DependentUpon>DashboardAdd.xaml</DependentUpon>
     </Compile>
@@ -105,6 +106,7 @@
     <Compile Include="src\SelectedDashboard.xaml.cs">
       <DependentUpon>SelectedDashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="src\Task.cs" />
     <Compile Include="src\TaskAdd.xaml.cs">
       <DependentUpon>TaskAdd.xaml</DependentUpon>
     </Compile>

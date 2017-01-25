@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -26,6 +28,15 @@ namespace TaskList.src
         public DashboardView()
         {
             this.InitializeComponent();
+//            DataContext = Dashboard.GetDashboards();
+            DashboardsContainer.ItemsSource = Dashboard.GetDashboards();
+            DashboardsContainer2.ItemsSource = Dashboard.GetDashboards();
+        }
+
+        private void DashboardViewCall(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var code = (Dashboard) button.DataContext;
         }
 
         private void PaneDashboardOpen(object sender, RoutedEventArgs e)

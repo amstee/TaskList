@@ -28,7 +28,7 @@
     <AppXManifest Include="C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\bin\x86\Release\ilc\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-01-25T01:28:07.028</Modified>
+      <Modified>2017-01-25T23:54:09.878</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -73,19 +73,19 @@
     <AppxPackagedFile Include="C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\bin\x86\Release\ilc\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-01-25T01:27:49.110</Modified>
+      <Modified>2017-01-25T23:53:50.799</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\bin\x86\Release\ilc\TaskList.dll">
       <PackagePath>TaskList.dll</PackagePath>
-      <Modified>2017-01-25T01:28:06.905</Modified>
+      <Modified>2017-01-25T23:54:09.740</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\bin\x86\Release\ilc\TaskList.exe">
       <PackagePath>TaskList.exe</PackagePath>
-      <Modified>2017-01-25T01:28:07.012</Modified>
+      <Modified>2017-01-25T23:54:09.861</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\bin\x86\Release\ilc\TaskList.pdb">
       <PackagePath>TaskList.pdb</PackagePath>
-      <Modified>2017-01-25T01:28:07.000</Modified>
+      <Modified>2017-01-25T23:54:09.846</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
