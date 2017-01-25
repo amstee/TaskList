@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="TaskList.src.TaskAdd"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TaskList.src"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Margin = "20">
+
+            <ToggleButton x:Name = "HamburgerButton" FontFamily = "Segoe MDL2 Assets"
+               Content = "" Checked = "PaneDashboardOpen" Unchecked = "PaneDashboardClose"
+                              Height="53" Width="70" FontSize="26"/>
+
+            <SplitView x:Name = "splitView" DisplayMode = "Inline" 
+            OpenPaneLength = "296">
+
+                <SplitView.Pane>
+                    <StackPanel Padding="0,0,0,20" Height="1000">
+                        <TextBlock Text = "Actions" FontSize = "36" 
+                     VerticalAlignment = "Center" HorizontalAlignment = "Center" 
+                     Margin = "10"/>
+                        <Button Content = "Home" Margin = "0,50,0,10" Width="200" HorizontalAlignment="Center"
+                                Click="GoToHomeView">
+                        </Button>
+
+                        <Button Content = "Create a new Dashboard" Margin="0,10,0,10" Width="200" HorizontalAlignment="Center"
+                            Click="CreateDashboardView">
+                        </Button>
+
+
+                        <Button Content = "Quit" Margin = "0,10,0,10" Width="200" HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom" Click="LeaveTaskList">
+                        </Button>
+
+                    </StackPanel>
+
+                </SplitView.Pane>
+
+                <StackPanel>
+                    <TextBlock Text = "Add a task" FontSize = "36" 
+                     VerticalAlignment = "Center" HorizontalAlignment = "Center" 
+                     Margin = "10"/>
+                </StackPanel>
+            </SplitView>
+
+        </StackPanel>
+    </Grid>
+</Page>
