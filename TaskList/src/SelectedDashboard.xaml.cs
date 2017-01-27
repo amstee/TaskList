@@ -23,9 +23,43 @@ namespace TaskList.src
     /// </summary>
     public sealed partial class SelectedDashboard : Page
     {
+        private Dashboard _context;
+
         public SelectedDashboard()
         {
             this.InitializeComponent();
+        }
+
+        private void DeleteDashboard(object sender, RoutedEventArgs e)
+        {
+            Dashboard.RemoveDashboard(_context);
+            Frame.Navigate(typeof(DashboardView), null);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var parameter = (Dashboard)e.Parameter;
+            _context = parameter;
+            base.OnNavigatedTo(e);
+
+            Title.DataContext = _context;
+            TasksContainer.ItemsSource = _context.FirstHalfTask();
+            TasksContainer2.ItemsSource = _context.SecondHalfTask();
+        }
+
+        private void TaskViewNavigation(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+                return;
+            var code = (Task)button.DataContext;
+            var codePass = new ContextTask(_context, code);
+            Frame.Navigate(typeof(TaskView), codePass);
+        }
+
+        private void TaskAddNavigation(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TaskAdd), _context);
         }
 
         private void PaneDashboardOpen(object sender, RoutedEventArgs e)
@@ -41,11 +75,6 @@ namespace TaskList.src
         private void CreateDashboardView(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(DashboardAdd), null);
-        }
-
-        private void CreateTaskView(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(TaskAdd), null);
         }
 
         private void GoToHomeView(object sender, RoutedEventArgs e)

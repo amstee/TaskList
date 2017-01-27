@@ -23,12 +23,16 @@
                      VerticalAlignment = "Center" HorizontalAlignment = "Center" 
                      Margin = "10"/>
 
-                        <Button Content = "Create a new Dashboard" Margin="0,50,0,10" Width="200" HorizontalAlignment="Center"
+                        <Button Content = "Home" Margin="0,50,0,10" Width="200" HorizontalAlignment="Center"
+                            Click="GoToHomeView">
+                        </Button>
+                        
+                        <Button Content = "Create a new Dashboard" Margin="0,10,0,10" Width="200" HorizontalAlignment="Center"
                             Click="CreateDashboardView">
                         </Button>
 
-                        <Button Content = "Create a new task" Margin = "0,10,0,10" Width="200" HorizontalAlignment="Center"
-                                Click="CreateTaskView">
+                        <Button Content = "Delete this task" Margin="0,10,0,10" Width="200" HorizontalAlignment="Center"
+                            Click="DeleteTask">
                         </Button>
 
                         <Button Content = "Quit" Margin = "0,10,0,10" Width="200" HorizontalAlignment="Center"
@@ -44,6 +48,38 @@
                         <TextBlock Text = "Your task" FontSize = "36" 
                      VerticalAlignment = "Center" HorizontalAlignment = "Center" 
                      Margin = "10"/>
+
+                    <TextBlock Name = "name" TextAlignment="Center" FontSize="30" Margin="0,50,0,0">
+                    Name :
+                    </TextBlock>
+                    <TextBox Name = "nameText" Grid.Column = "1" FontSize="24" Margin = "10,20,0,0" Width="1000"
+                            Text = "{Binding Name, Mode = TwoWay}" Foreground="Orange" />
+                        <TextBlock Name = "description" TextAlignment="Center" FontSize="30" Margin="0,30,0,0">
+                    Description :
+                        </TextBlock>
+                        <TextBox AcceptsReturn="True" Name = "descText" Margin = "10,20,0,0" FontSize="24" Height="100" Width="1000"
+                            Text = "{Binding Description, Mode = TwoWay}" Foreground="Orange" />
+
+                        <TextBlock Name = "state" TextAlignment="Center" FontSize="30" Margin="0,30,0,0">
+                    Status :
+                        </TextBlock>
+                        <TextBox Name = "stateText" Margin = "10,20,0,0" FontSize="24" Width="1000"
+                            Text = "{Binding Status, Mode = TwoWay}" Foreground="Orange" />
+
+
+                        <TextBlock Name = "date" TextAlignment="Center" FontSize="30" Margin="0,30,0,0">
+                    Deadline :
+                    </TextBlock>
+
+                        
+                    <DatePicker Name="DatePicker" Margin="10,20,0,0" FontSize="24" HorizontalAlignment="Center">
+
+                    </DatePicker>
+
+                    <Button Name="Update" Click="UpdateTask" HorizontalAlignment="Center"
+                        Height="50" Width="1000" Margin="0,30,0,0" FontSize="26">
+                        update
+                    </Button>
                     </StackPanel>
                 </StackPanel>
             </SplitView>

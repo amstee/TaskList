@@ -29,9 +29,6 @@
                             Click="CreateDashboardView">
                         </Button>
 
-                        <Button Content = "Create a new task" Margin = "0,10,0,10" Width="200" HorizontalAlignment="Center"
-                                Click="CreateTaskView">
-                        </Button>
 
                         <Button Content = "Quit" Margin = "0,10,0,10" Width="200" HorizontalAlignment="Center"
                                 VerticalAlignment="Bottom" Click="LeaveTaskList">
@@ -73,6 +70,7 @@
                                 <DataTemplate x:DataType="local:Dashboard">
                                     <Button Click="DashboardViewCall" Margin="20" Width="500">
                                         <StackPanel>
+                                            <TextBlock Text="{x:Bind Id}"></TextBlock>
                                             <TextBlock Text="{x:Bind Name}"></TextBlock>
                                             <TextBlock Text="{x:Bind Description}"></TextBlock>
                                             <TextBlock Text="{x:Bind Created}"></TextBlock>

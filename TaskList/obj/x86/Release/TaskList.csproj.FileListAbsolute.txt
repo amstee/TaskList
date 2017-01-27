@@ -1,5 +1,0 @@
-C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\obj\x86\Release\ilc\in\System.Collections.Immutable.dll
-C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\obj\x86\Release\ilc\in\System.Numerics.Vectors.dll
-C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\obj\x86\Release\ilc\in\System.Numerics.Vectors.WindowsRuntime.dll
-C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\obj\x86\Release\ilc\in\System.Reflection.Metadata.dll
-C:\Users\jerem\Desktop\Development\Personal\CSharp-and-.Net-project\TaskList\obj\x86\Release\ilc\in\System.Threading.Tasks.Dataflow.dll

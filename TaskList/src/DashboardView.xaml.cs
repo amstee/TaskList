@@ -28,15 +28,17 @@ namespace TaskList.src
         public DashboardView()
         {
             this.InitializeComponent();
-//            DataContext = Dashboard.GetDashboards();
-            DashboardsContainer.ItemsSource = Dashboard.GetDashboards();
-            DashboardsContainer2.ItemsSource = Dashboard.GetDashboards();
+            DashboardsContainer.ItemsSource = Dashboard.GetFirstHalf();
+            DashboardsContainer2.ItemsSource = Dashboard.GetSecondHalf();
         }
 
         private void DashboardViewCall(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
+            if (button == null)
+                return;
             var code = (Dashboard) button.DataContext;
+            Frame.Navigate(typeof(SelectedDashboard), code);
         }
 
         private void PaneDashboardOpen(object sender, RoutedEventArgs e)

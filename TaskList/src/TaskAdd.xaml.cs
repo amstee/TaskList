@@ -23,9 +23,35 @@ namespace TaskList.src
     /// </summary>
     public sealed partial class TaskAdd : Page
     {
+        private Dashboard _context;
+
         public TaskAdd()
         {
             this.InitializeComponent();
+            Task task = new Task();
+            nameText.DataContext = task;
+            descText.DataContext = task;
+            Submit.DataContext = task;
+            stateText.DataContext = task;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var parameter = (Dashboard)e.Parameter;
+            _context = parameter;
+            base.OnNavigatedTo(e);
+        }
+
+        private void SubmitTask(object sender, RoutedEventArgs e)
+        {
+            if (sender == null)
+                return;
+            Task task = (Task) ((Button) sender).DataContext;
+
+            task.Created = DateTime.Now.ToString();
+            task.Deadline = DatePicker.Date.ToString();
+            _context.AddTask(task);
+            Frame.Navigate(typeof(SelectedDashboard), _context);
         }
 
         private void PaneDashboardOpen(object sender, RoutedEventArgs e)

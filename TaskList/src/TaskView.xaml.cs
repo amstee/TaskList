@@ -23,9 +23,37 @@ namespace TaskList.src
     /// </summary>
     public sealed partial class TaskView : Page
     {
+        private Dashboard _context;
+        private Task _task;
+
         public TaskView()
         {
             this.InitializeComponent();
+        }
+
+        private void UpdateTask(object sender, RoutedEventArgs e)
+        {
+            _task.Deadline = DatePicker.Date.ToString();
+            Frame.Navigate(typeof(SelectedDashboard), _context);
+        }
+
+        private void DeleteTask(object sender, RoutedEventArgs e)
+        {
+            _context.RemoveTask(_task);
+            Frame.Navigate(typeof(SelectedDashboard), _context);
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var parameter = (ContextTask)e.Parameter;
+            _context = parameter.Context;
+            _task = parameter.Task;
+            base.OnNavigatedTo(e);
+
+            nameText.DataContext = _task;
+            descText.DataContext = _task;
+            stateText.DataContext = _task;
+            DatePicker.Date = Convert.ToDateTime(_task.Deadline);
         }
 
         private void PaneDashboardOpen(object sender, RoutedEventArgs e)

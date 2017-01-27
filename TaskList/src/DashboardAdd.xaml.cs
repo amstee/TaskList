@@ -26,7 +26,12 @@ namespace TaskList.src
         public DashboardAdd()
         {
             this.InitializeComponent();
+            Dashboard dash = new Dashboard();
+            nameText.DataContext = dash;
+            descText.DataContext = dash;
+            Submit.DataContext = dash;
         }
+
         private void PaneDashboardOpen(object sender, RoutedEventArgs e)
         {
             splitView.IsPaneOpen = true;
@@ -50,6 +55,21 @@ namespace TaskList.src
         private void GoToHomeView(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(DashboardView), null);
+        }
+
+        private void SubmitDashboard(object sender, RoutedEventArgs e)
+        {
+            if (sender == null)
+                return;
+            Dashboard dash = (Dashboard) ((Button) sender).DataContext;
+
+            dash.Created = DateTime.Now.ToString();
+            Dashboard.AddDashboard(dash);
+            Dashboard ndash = new Dashboard(0, "name", "description", DateTime.Now.ToString());
+            nameText.DataContext = ndash;
+            descText.DataContext = ndash;
+            Submit.DataContext = ndash;
+
         }
 
         private void LeaveTaskList(object sender, RoutedEventArgs e)
